@@ -3,7 +3,7 @@
 
   The Dog object is created using Object.create and inherits properties and methods from the Animal object. Additional properties and methods are added to the Dog object using Object.assign.
 
-  Finally, a new Dog object is created using Object.create, and its properties and methods are set and called to demonstrate how inheritance works.
+  Finally, a new Dog object is created using Object.create, and its properties and methods are set and called.
 */
 
 // Define the Animal object literal

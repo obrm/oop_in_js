@@ -3,7 +3,7 @@
 
   The Dog constructor function calls the Animal constructor function using call to set this to the new Dog object, and sets additional properties for the Dog object, such as breed. The prototype of the Dog constructor function is then set to be an object created from the Animal prototype using Object.create. This allows the Dog class to inherit methods and properties from the Animal class.
 
-  Finally, the Dog class has its own prototype method, bark, which logs a message to the console. A new Dog object is created using the new keyword, and its properties and methods are called to demonstrate how inheritance works.
+  Finally, the Dog class has its own prototype method, bark, which logs a message to the console. A new Dog object is created using the new keyword, and its properties and methods are called.
 */
 
 // Define the Animal constructor function
