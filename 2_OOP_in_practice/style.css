@@ -103,3 +103,7 @@ button:hover {
   color: #fff;
   text-align: center;
 }
+
+.show {
+  display: block;
+}
