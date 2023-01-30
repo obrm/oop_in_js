@@ -92,13 +92,13 @@ button:hover {
   margin-top: 15%;
   padding: 5rem;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
   text-align: center;
   position: relative;  
 }
 
 #recipe {
-  padding-left: 30rem;
+  padding-left: 10rem;
   text-align: left;
 }
 
@@ -117,12 +117,13 @@ button:hover {
   right: 50%;
   transform: translateX(50%);
   top: 25rem;
-  width: 40%;
+  width: 35%;
   height: auto;
   padding: 3rem;
   background-color: #333;
   color: #fff;
   text-align: center;
+  opacity: .8;
 }
 
 .show {

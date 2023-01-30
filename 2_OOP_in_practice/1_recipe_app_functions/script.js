@@ -1,3 +1,13 @@
+const recipeTitle = document.getElementById('recipeTitle');
+const recipeText = document.getElementById('recipe');
+const recipeModal = document.getElementById('recipeModal');
+const errorToast = document.getElementById('errorToast');
+const closeRecipeButton = document.getElementById("closeModal");
+const closeToastButton = document.getElementById("closeToast");
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+const selectedIngredients = [];
+
 function Recipe(name, ingredients) {
   return { name, ingredients };
 }
@@ -48,7 +58,6 @@ const handleCheckboxChange = (checkboxes, selectedIngredients, displayRecipe, di
 };
 
 const displayRecipe = (recipe) => {
-  const recipeTitle = document.getElementById('recipeTitle');
   recipeTitle.innerText = `Based on your selections, Here is a recipe for ${recipe.name}`;
 
   const list = document.createElement('ul');
@@ -58,35 +67,26 @@ const displayRecipe = (recipe) => {
     listItem.innerText = ingredient;
     list.appendChild(listItem);
   });
-  const recipeText = document.getElementById('recipe');
   recipeText.appendChild(list);
 
-  const recipeModal = document.getElementById('recipeModal');
   recipeModal.classList.add('show');
 };
 
 const displayError = () => {
-  const errorToast = document.getElementById('errorToast');
   errorToast.classList.add('show');
 };
 
 const closeModal = () => {
-  const recipeModal = document.getElementById('recipeModal');
   recipeModal.classList.remove('show');
 };
 
 const closeToast = () => {
-  const errorToast = document.getElementById('errorToast');
   errorToast.classList.remove('show');
 };
 
-const selectedIngredients = [];
-const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-const closeRecipeButton = document.getElementById("closeModal");
 closeRecipeButton.addEventListener("click", closeModal);
 
-const closeToastButton = document.getElementById("closeToast");
 closeToastButton.addEventListener("click", closeToast);
 
 handleCheckboxChange(checkboxes, selectedIngredients, displayRecipe, displayError);
