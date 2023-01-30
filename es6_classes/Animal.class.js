@@ -1,15 +1,7 @@
-/*
-  In this code example, we define an Animal class with a constructor that sets a protected _name property. The _name property is accessed through a getter and setter name. The Animal class also includes a static method create, public method makeSound that implements method chaining and a private method #eat that can only be accessed within the class.
-
-  We then define a Dog class that extends the Animal class and overrides the makeSound method.
-
-  We create instances of Animal and Dog and demonstrate accessing their properties and methods, including the method chaining in the Animal class.
-*/
-
+// Define the Animal class
 class Animal {
   // Constructor with protected property
   constructor(name) {
-    // Protected property
     this._name = name;
   }
 
@@ -23,34 +15,52 @@ class Animal {
     this._name = value;
   }
 
+
   // Static method
   static create(name) {
     return new Animal(name);
   }
 
-  // Public method with method chaining
+  // Public method
   makeSound() {
-    console.log(`${this.name} makes a sound`);
-    return this;
+    return `${this.name} makes a sound`;
   }
-  
+
   // Private method
   #eat() {
     console.log(`${this.name} is eating`);
   }
 
-  // Method that calls the private method
+  // Method that calls the private method with method chaining
   performAction() {
     this.#eat();
     return this;
   }
 }
 
+// Define the Dog class and inherit from Animal
 class Dog extends Animal {
-  // Override the makeSound method from the parent class
+  // constructor to set the breed property
+  constructor(name, breed) {
+    // calling the parent constructor to set the name property
+    super(name);
+    this._breed = breed;
+  }
+
+  // getter for the breed property
+  get breed() {
+    return this._breed;
+  }
+
+  // setter for the breed property
+  set breed(value) {
+    this._breed = value;
+  }
+
+  // overriding the makeSound method to return the specific sound made by a dog
   makeSound() {
-    console.log(`${this.name} barks`);
-    return this;
+    // calling the parent makeSound method
+    return `${super.makeSound()} (But a dog barks)`;
   }
 }
 
@@ -58,10 +68,16 @@ const myAnimal = Animal.create("My Animal");
 console.log(myAnimal.name); // "My Animal"
 myAnimal.name = "My Updated Animal";
 console.log(myAnimal.name); // "My Updated Animal"
-myAnimal.makeSound().performAction();
-// Output: 
-// "My Updated Animal makes a sound"
+console.log(myAnimal.performAction().makeSound());
+// Output:
 // "My Updated Animal is eating"
+// "My Updated Animal makes a sound"
 
-const myDog = new Dog("My Dog");
-myDog.makeSound(); // "My Dog barks"
+
+// creating a new Dog object
+const myDog = new Dog("Max", "Labrador");
+
+// accessing the properties and methods of the Dog object
+console.log(myDog.name); // Output: Max
+console.log(myDog.breed); // Output: Labrador
+console.log(myDog.makeSound()); // Output: Some generic animal sound (But a dog barks)
