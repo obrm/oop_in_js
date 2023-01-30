@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ingredient Selector</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h1 class='title'>Select Your Ingredients</h1>
+  <div class="container">
+    <div class="ingredient">
+      <h2>Protein</h2>
+      <input type="checkbox" id="tofu" name="protein" value="Tofu">
+      <label for="tofu">Tofu</label><br>
+      <input type="checkbox" id="mozzarellaCheese" name="protein" value="Mozzarella Cheese">
+      <label for="mozzarellaCheese">Mozzarella Cheese</label><br>
+      <input type="checkbox" id="parmesanCheese" name="protein" value="Parmesan Cheese">
+      <label for="parmesanCheese">Parmesan Cheese</label>
+    </div>
+    <div class="ingredient">
+      <h2>Vegetable</h2>
+      <input type="checkbox" id="basil" name="vegetable" value="Basil">
+      <label for="basil">Basil</label><br>
+      <input type="checkbox" id="veggies" name="vegetable" value="Veggies">
+      <label for="veggies">Veggies</label>
+    </div>
+    <div class="ingredient">
+      <h2>Carb</h2>
+      <input type="checkbox" id="rice" name="carb" value="Rice">
+      <label for="rice">Rice</label><br>
+      <input type="checkbox" id="pasta" name="carb" value="Pasta">
+      <label for="pasta">Pasta</label><br>
+      <input type="checkbox" id="fettuccinePasta" name="carb" value="Fettuccine Pasta">
+      <label for="fettuccinePasta">Fettuccine Pasta</label>
+    </div>
+    <div class="ingredient">
+      <h2>Sauce</h2>
+      <input type="checkbox" id="stirFrySauce" name="vegetable" value="Stir Fry Sauce">
+      <label for="stirFrySauce">Stir Fry Sauce</label><br>
+      <input type="checkbox" id="alfredoSauce" name="vegetable" value="Alfredo Sauce">
+      <label for="alfredoSauce">Alfredo Sauce</label><br>
+      <input type="checkbox" id="tomatoSauce" name="vegetable" value="Tomato Sauce">
+      <label for="tomatoSauce">Tomato Sauce</label><br>
+      <input type="checkbox" id="pestoSauce" name="vegetable" value="Pesto Sauce">
+      <label for="pestoSauce">Pesto Sauce</label>
+    </div>
+  </div>
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class='close'>&times;</span>
+      <h2 id='recipeTitle'></h2>
+      <p id="recipe"></p>
+    </div>
+  </div>
+
+  <div id="errorToast" class="toast">
+    <span id="closeToast" class='close'>&times;</span>
+    <h2>OOPS...</h2>
+    <p id="errorMessage">We can't prepare a recipe with the ingredients you selected...</p>
+    <p>Please try again.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
