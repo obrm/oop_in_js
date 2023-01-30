@@ -1,5 +1,29 @@
 # OBJECT ORIENTED PROGRAMMING IN JAVASCRIPT
 
+JavaScript is a multi-paradigm programming language that has support for object-oriented programming (OOP) as one of its paradigms. JavaScript implements OOP using a prototype-based inheritance mechanism, which is different from class-based inheritance as seen in languages like Java and C++.
+
+In JavaScript, objects are the basic building blocks for OOP. An object is a collection of properties and methods that define its behavior. Each object has a prototype, which is another object that it inherits properties and methods from. When an object accesses a property or method that is not found on itself, it looks up the prototype chain to see if it can find the property or method there.
+
+JavaScript supports object-oriented concepts such as inheritance, encapsulation, abstraction, and polymorphism, although the implementation of these concepts may be different from what you would see in a class-based language.
+
+JavaScript is considered a prototype-based language, which is a subset of object-oriented languages. In prototype-based OOP, objects inherit directly from other objects, whereas in class-based OOP, objects inherit from classes, which are templates for creating objects.
+
+Overall, JavaScript provides a flexible and dynamic approach to OOP, allowing developers to create and manipulate objects and handle inheritance in a way that suits their needs.
+
+## JavaScript as a Prototype-Based Language
+
+Inheritance in JavaScript allows objects to inherit properties and methods from other objects. This allows objects to share behavior and characteristics, reducing the amount of code that needs to be written and increasing code reuse. JavaScript implements inheritance using prototypes. Each object has a reference to a prototype object, and if a property or method is not found on the object itself, it is looked up in its prototype and so on up the prototype chain until it is found or until the end of the chain is reached.
+
+Encapsulation in JavaScript refers to the practice of hiding the internal implementation details of an object and exposing only the necessary information to the outside world. This is typically achieved in JavaScript by using closures, which allow functions to access private variables and methods.
+
+Abstraction in JavaScript involves the creation of objects that have the same interface but different implementations. This allows objects to be used interchangeably, even if they have different underlying implementation details.
+
+Polymorphism in JavaScript refers to the ability of objects to take on many forms. This can be achieved by creating objects that share the same interface but have different implementations, allowing them to be used interchangeably.
+
+In class-based object-oriented languages like Java and C++, these concepts are implemented using classes, which are templates for creating objects. However, in JavaScript, prototypes are used instead of classes to define objects and handle inheritance. This difference in implementation is what makes JavaScript a prototype-based language and a subset of object-oriented languages.
+
+Overall, JavaScript supports many of the object-oriented concepts that are found in class-based languages, but the implementation of these concepts may be different and more flexible, allowing developers to handle inheritance and object creation in a way that suits their needs.
+
 ## ES6 Classes are just Syntactic Sugar
 
 "Syntactic sugar" is a term used to describe a syntax or feature that makes code easier to read or write, but does not add any new functionality.
