@@ -13,7 +13,7 @@ const Animal = {
   // Property for the species of the animal
   species: '',
   // Method for making a sound
-  makeSound: function () {
+  makeSound() {
     console.log(`${this.name} makes a sound.`);
   }
 };
@@ -24,7 +24,7 @@ const Dog = Object.create(Animal);
 // Add additional properties and methods to the Dog object
 Object.assign(Dog, {
   breed: '',
-  bark: function () {
+  bark() {
     console.log(`${this.name} barks.`);
   }
 });
