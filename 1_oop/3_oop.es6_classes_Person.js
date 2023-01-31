@@ -52,9 +52,18 @@ console.log(mazal.__proto__ === Person.prototype);
 mazal.greet();
 
 // 1. Classes are NOT hoisted
-// 2. Classes are first-class citizens
+// 2. Classes are first-class citizens?
 // 3. Classes are executed in strict mode
 Person.hey();
+
+/*
+  ? First-Class Citizens ?
+  In JavaScript, a class is a special type of code that you can use to create objects with similar properties and methods. And, "first-class citizens" means that classes in JavaScript can be used and manipulated just like any other value, such as a number or a string.
+
+  For example, you can assign a class to a variable, pass it as an argument to a function, or return it as a value from a   function. This makes classes a fundamental and versatile part of the language.
+
+  It means that classes have the same level of importance and treatment as other variables and data types, such as numbers and strings. This means that classes can be assigned to variables, passed as arguments to functions, and used in the same ways as other values in the language.
+*/
 
 // * Inheritance and Polymorphism
 

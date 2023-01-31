@@ -9,7 +9,7 @@
 class Animal {
   // Constructor with protected property
   constructor(name) {
-    // Protected property
+    // Protected property (By convention. Not a part of the syntax!)
     this._name = name;
   }
 

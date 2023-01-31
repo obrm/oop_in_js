@@ -12,7 +12,7 @@ const Vehicle = function (name) {
   this.name = name;
 };
 
-Vehicle.prototype.drive = function () {
+drive = function () {
   return `${this.name} is driving`;
 };
 
@@ -37,13 +37,8 @@ const Car = function (name, manufacturer) {
   };
 };
 
-//Inheritance example
-//Setting the prototype to be an instance of the parent class
-Car.prototype = Object.create(Vehicle.prototype);
-Car.prototype.constructor = Car;
-
 //Polymorphism example
-//Overriding the drive method in the child class
+//Overriding the drive method of the parent class
 Car.prototype.drive = function () {
   return `${this.name} made by ${this.getManufacturer()} is driving`;
 };

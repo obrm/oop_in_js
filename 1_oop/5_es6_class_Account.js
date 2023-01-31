@@ -42,7 +42,6 @@ class Account {
     }
     console.log(`Loan amount too high. Loan rejected.`);
     return this;
-
   }
 
   static helper() {
@@ -62,16 +61,16 @@ class Account {
   }
 }
 
-const acc1 = new Account('Jonas', 'EUR', 1111);
+const acc = new Account('Jonas', 'EUR', 1111);
 
 // acc1.#movements.push(1000000);
 // acc1.#approveLoan(1000);
 
-acc1.deposit(250);
-acc1.withdraw(140);
-acc1.requestLoan(10000);
-console.log(acc1.movements);
-console.log(acc1);
+acc.deposit(250);
+acc.withdraw(140);
+acc.requestLoan(10000);
+console.log(acc.movements);
+console.log(acc);
 Account.helper();
 
 // console.log(acc1.#movements);
@@ -79,6 +78,6 @@ Account.helper();
 // console.log(acc1.#approveLoan(100));
 
 // Chaining
-acc1.deposit(300).deposit(500).withdraw(35).requestLoan(10000).withdraw(4000);
-console.log(acc1.movements);
-console.log(acc1.balance);
+acc.deposit(300).deposit(500).withdraw(35).requestLoan(10000).withdraw(4000);
+console.log(acc.movements);
+console.log(acc.balance);
