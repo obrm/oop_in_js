@@ -52,7 +52,7 @@ console.log(mazal.__proto__ === Person.prototype);
 mazal.greet();
 
 // 1. Classes are NOT hoisted
-// 2. Classes are first-class citizens?
+// ? 2. Classes are first-class citizens?
 // 3. Classes are executed in strict mode
 Person.hey();
 
