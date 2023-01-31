@@ -7,7 +7,7 @@ class Recipe {
 
 class Recipes {
   constructor() {
-    this.recipes = [
+    this._recipes = [
       new Recipe("Pizza Margherita", ["Tomato Sauce", "Mozzarella Cheese", "Basil"]),
       new Recipe("Pesto Pasta", ["Pesto Sauce", "Pasta", "Parmesan Cheese"]),
       new Recipe("Tofu Alfredo", ["Tofu", "Alfredo Sauce", "Fettuccine Pasta"]),
@@ -16,7 +16,7 @@ class Recipes {
   }
 
   findMatchingRecipe(ingredients) {
-    for (const recipe of this.recipes) {
+    for (const recipe of this._recipes) {
       let match = true;
       for (const ingredient of recipe.ingredients) {
         if (!ingredients.includes(ingredient)) {
@@ -32,54 +32,53 @@ class Recipes {
 
 class App {
   constructor() {
-    this.checkboxes = document.querySelectorAll("input[type=checkbox]");
-    this.submitButton = document.getElementById("submit");
-    this.recipeModal = document.getElementById('recipeModal');
-    this.closeModal = document.getElementById("closeModal");
-    this.closeToast = document.getElementById("closeToast");
-    this.recipeTitle = document.getElementById('recipeTitle');
-    this.recipeText = document.getElementById('recipe');
-    this.errorToast = document.getElementById('errorToast');
+    this._checkboxes = document.querySelectorAll("input[type=checkbox]");
+    this._recipeModal = document.getElementById('recipeModal');
+    this._closeModal = document.getElementById("closeModal");
+    this._closeToast = document.getElementById("closeToast");
+    this._recipeTitle = document.getElementById('recipeTitle');
+    this._recipeText = document.getElementById('recipe');
+    this._errorToast = document.getElementById('errorToast');
 
-    this.recipes = new Recipes();
+    this._recipes = new Recipes();
 
-    this.selectedIngredients = [];
+    this._selectedIngredients = [];
 
-    this.closeModal.addEventListener("click", (e) => {
-      this.recipeModal.classList.remove("show");
+    this._closeModal.addEventListener("click", (e) => {
+      this._recipeModal.classList.remove("show");
     });
 
-    this.closeToast.addEventListener("click", (e) => {
-      this.errorToast.classList.remove("show");
+    this._closeToast.addEventListener("click", (e) => {
+      this._errorToast.classList.remove("show");
     });
 
-    this.checkboxes.forEach(checkbox => {
-      checkbox.addEventListener("change", () => this.ingredientSelected(checkbox));
+    this._checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", () => this._ingredientSelected(checkbox));
     });
   }
 
-  ingredientSelected(checkbox) {
+  _ingredientSelected(checkbox) {
     if (checkbox.checked) {
-      this.selectedIngredients.push(checkbox.value);
+      this._selectedIngredients.push(checkbox.value);
     } else {
-      this.selectedIngredients = this.selectedIngredients.filter(
+      this._selectedIngredients = this._selectedIngredients.filter(
         ingredient => ingredient !== checkbox.value
       );
     }
 
-    if (this.selectedIngredients.length < 3) return;
+    if (this._selectedIngredients.length < 3) return;
 
-    const recipe = this.recipes.findMatchingRecipe(this.selectedIngredients);
+    const recipe = this._recipes.findMatchingRecipe(this._selectedIngredients);
 
-    if (this.selectedIngredients.length !== 3 || !recipe) {
-      this.displayError();
+    if (this._selectedIngredients.length !== 3 || !recipe) {
+      this._displayError();
     } else {
-      this.displayRecipe(recipe);
+      this._displayRecipe(recipe);
     }
   }
 
-  displayRecipe(recipe) {
-    this.recipeTitle.innerText = `Based on your selections, Here is a recipe for ${recipe.name}`;
+  _displayRecipe(recipe) {
+    this._recipeTitle.innerText = `Based on your selections, Here is a recipe for ${recipe.name}`;
 
     const list = document.createElement('ul');
     
@@ -88,13 +87,13 @@ class App {
       listItem.innerText = ingredient;
       list.appendChild(listItem);
     });
-    this.recipeText.appendChild(list);
+    this._recipeText.appendChild(list);
     
-    this.recipeModal.classList.add('show');
+    this._recipeModal.classList.add('show');
   }
 
-  displayError() {
-    this.errorToast.classList.add('show');
+  _displayError() {
+    this._errorToast.classList.add('show');
   }
 }
 
