@@ -92,7 +92,7 @@ Using private properties and methods can help make the code more maintainable an
 
 ## JavaScript Language Doesn't Enforce Private and Protected Features
 
-In JavaScript, the privacy of class properties and methods is not enforced by the language itself, meaning that there is no direct way to prevent access to private or protected properties and methods. Instead, it is up to the programmer to follow a convention of prefixing the names of private properties and methods with an underscore, or using closures, to indicate that they should not be directly accessed from outside the class.
+In JavaScript, until ECMAScript 2020, the privacy of class properties and methods were not enforced by the language itself, meaning that there is no direct way to prevent access to private or protected properties and methods. Instead, it is up to the programmer to follow a convention of prefixing the names of private properties and methods with an underscore, or using closures, to indicate that they should not be directly accessed from outside the class.
 
 For example, in the code below, the _privateMethod and _privateProperty are considered to be private, because of the underscore prefix, but they can still be accessed from outside the class if the programmer chooses to do so:
 
@@ -115,6 +115,12 @@ myInstance._privateMethod(); // Output: 'This is a private method'
 The same applies to protected properties and methods, which are indicated using the protected keyword. The protected keyword is used in some object-oriented languages, such as Java and C#, to indicate that a property or method can be accessed from within the class and its subclasses, but not from outside the class hierarchy. However, in JavaScript, the protected keyword is not recognized by the language and has no special meaning.
 
 In summary, the privacy of class properties and methods in JavaScript is a convention, rather than a strict enforcement by the language. It is up to the programmer to follow best practices and avoid accessing private or protected properties and methods from outside the class.
+
+### The hash # prefix
+
+The use of the hash symbol (#) is part of the ECMAScript 2020 specification and does provide privacy for class members when used in this manner. The privacy of these class members is enforced by the JavaScript engine and they cannot be accessed directly from outside the class.
+
+The use of the hash symbol as a private class member notation is a **relatively new addition to the language**, and its behavior may be subject to change in future versions of ECMAScript. However, it is considered a reliable and concise way to define private class members in JavaScript.
 
 ## Getters & Setters
 
